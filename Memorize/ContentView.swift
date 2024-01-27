@@ -1,4 +1,5 @@
 import SwiftUI
+import Dispatch
 
 struct ContentView: View {
     let fantasyEmojis: [String] = [
@@ -22,12 +23,12 @@ struct ContentView: View {
     @State var themeColor: Color = .blue
     @State var count = 0
     @State var num: Int = 0
-    
 
     var body: some View {
         VStack {
             Text("Memorize!")
                 .font(.largeTitle)
+                .underline()
 
             Spacer()
 
@@ -60,9 +61,11 @@ struct ContentView: View {
     var cards: some View {
         VStack {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: CGFloat(count * 5)))], content: {
-                    ForEach(0..<num, id: \.self) { index in
-                        CardView(content: emojis[index], cardColor: themeColor).aspectRatio(2/3, contentMode: .fit)
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))], content: {
+                    if(num > 0){
+                        ForEach(0..<num, id: \.self) { index in
+                            CardView(content: emojis[index], cardColor: themeColor).aspectRatio(2/3, contentMode: .fit)
+                    }
                     }
                 })
             }
@@ -82,13 +85,15 @@ struct ContentView: View {
 
     func themeButton(themeEmojis: [String], icon: String, color: Color) -> some View {
         Button(action: {
-            let x = Int.random(in: 7...12)
-            self.emojis = Array(themeEmojis.shuffled().prefix(x)) + Array(themeEmojis.shuffled().prefix(x))
-            self.themeColor = color
-            self.count = x * 2
-            if num == 0 {
-                num = emojis.count
-            }
+                let x = Int.random(in: 7...12)
+                let a = Array(themeEmojis.shuffled().prefix(x))
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { // Delay updates slightly
+                    self.emojis = (a + a).shuffled()
+                    self.themeColor = color
+                    self.count = x * 2
+                    self.num = emojis.count 
+                }
         }, label: {
             Circle()
                 .strokeBorder(lineWidth: 3)
@@ -103,7 +108,7 @@ struct ContentView: View {
 struct CardView: View {
     var content = "🛸"
     var cardColor: Color = .white
-    @State var isFaceup: Bool = false
+    @State var isFaceup: Bool = true
 
     var body: some View {
         ZStack {
