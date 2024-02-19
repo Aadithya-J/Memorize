@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A1B4D544-15D8-443F-A21C-35C79BCC725A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "133000B7-1DE3-4366-9AE8-D3D66A9FD1A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "COut/SearchPostsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "133000B7-1DE3-4366-9AE8-D3D66A9FD1A3 - 609354e0dbe0976b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "COut.SearchPostsView.body.getter : some"
+                  moduleName = "COut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aadithya/Developer/Projects/COut/COut/SearchPostsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "924">
+               </Location>
+               <Location
+                  uuid = "133000B7-1DE3-4366-9AE8-D3D66A9FD1A3 - 609354e0dbe0976b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "COut.SearchPostsView.body.getter : some"
+                  moduleName = "COut"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aadithya/Developer/Projects/COut/COut/SearchPostsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "784">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
